@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBlackWind">#000</color>
+    <color name="colorWhiteWind">#ffff</color>
+    <color name="colorGrayTextWind">#929292</color>
+    <color name="colorTransparentWind">#00000000</color>
+    <color name="colorHalfTransparentWind">#66000000</color>
+    <color name="colorBlackLightWind">#313131</color>
+    <color name="colorHalfTransparentWhiteWind">#88ffffff</color>
+
+    <color name="colorTopBarWind">#393a3f</color>
+    <color name="colorBottomBarWind">#393a3f</color>
+    <color name="colorButtonWind">#1aad19</color>
+    <color name="colorBorderWind">#1aad19</color>
+    <color name="colorBackgroundWind">#000</color>
+</resources>

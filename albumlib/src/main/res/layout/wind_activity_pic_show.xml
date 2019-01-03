@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layoutTopBar"
+        layout="@layout/wind_public_top_bar" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutTopBar" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layoutBottomBar"
+        android:layout_marginBottom="1px"
+        android:background="@color/colorHalfTransparentWind"
+        android:padding="10dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/layoutBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorHalfTransparentWind"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTransparentWind"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            android:text="编辑"
+            android:textColor="@color/colorWhiteWind" />
+
+        <CheckBox
+            android:id="@+id/cbCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:text="选择"
+            android:button="@drawable/wind_center_checkbox_style"
+            android:textColor="@color/colorWhiteWind" />
+    </RelativeLayout>
+</RelativeLayout>

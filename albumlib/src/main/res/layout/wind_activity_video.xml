@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWind"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layoutTopBar"
+        layout="@layout/wind_public_top_bar" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutBottomBar"
+        android:layout_below="@+id/layoutTopBar"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:spanCount="4" />
+
+    <LinearLayout
+        android:id="@+id/layoutAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutBottomBar"
+        android:layout_below="@+id/layoutTopBar"
+        android:background="@color/colorHalfTransparentWind"
+        android:visibility="gone">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="100dp"
+            android:background="@color/colorWhiteWind"
+            android:paddingTop="4dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBottomBarWind"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/tvAlbumName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@color/colorTransparentWind"
+            android:drawableRight="@mipmap/ic_more_wind"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="12dp"
+            android:text="相册名"
+            android:textColor="@color/colorWhiteWind" />
+
+        <Button
+            android:id="@+id/btnPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorTransparentWind"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="12dp"
+            android:text="预览"
+            android:textColor="@color/colorWhiteWind"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

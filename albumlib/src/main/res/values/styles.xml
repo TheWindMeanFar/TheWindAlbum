@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="WindTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorTopBarWind</item>
+        <item name="colorPrimaryDark">@color/colorTopBarWind</item>
+        <item name="colorAccent">@color/colorTopBarWind</item>
+    </style>
+</resources>
