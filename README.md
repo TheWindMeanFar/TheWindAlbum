@@ -119,3 +119,14 @@ TheWind.get().with(MainActivity.this)
         }
     }
 ```
+### 四、样式修改
+如果对默认的那种黑绿配色不满意，或者不符合自己的 APP 主题，可以修改主题颜色，只需在自己的项目的 colors.xml 中配置以下颜色
+```
+    <color name="colorTopBarWind">#FFFF7C00</color>
+    <color name="colorBottomBarWind">#FFFF7C00</color>
+    <color name="colorButtonWind">#FFFF7C00</color>
+    <color name="colorBorderWind">#FFFF7C00</color>
+    <color name="colorBackgroundWind">#f1f1f1</color>
+```
+还有就是 CheckBox 的颜色修改，只需在自己的项目中添加以下四张图，注意文件名称不能更改
+
