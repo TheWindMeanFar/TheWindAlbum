@@ -5,8 +5,11 @@
 晚点上效果图，今天 GitHub 卡爆了。
 
 测试机型：
+
 红米1S Android 4.4
+
 模拟器 Android 5.0
+
 小米5S Android 7.0
 ### 一、集成方式
 #### 1、在项目的 build.gradle 添加如下代码
