@@ -131,7 +131,6 @@ public class TheWindAlbum {
      */
     public TheWindAlbum setCropFileSavePath(String cropFileSavePath) {
         this.cropFileSavePath = cropFileSavePath;
-        System.out.println("你妹妹的" + cropFileSavePath);
         return theWindAlbum;
     }
 

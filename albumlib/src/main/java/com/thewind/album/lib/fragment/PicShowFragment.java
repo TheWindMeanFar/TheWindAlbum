@@ -14,10 +14,6 @@ import com.thewind.album.lib.base.BaseFragment;
 
 import java.io.File;
 
-/**
- * Created by robot on 2018/4/11.
- */
-
 public class PicShowFragment extends BaseFragment {
     private ImageView imageView;
 

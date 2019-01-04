@@ -9,7 +9,6 @@ import com.thewind.album.lib.bean.VideoInfo;
 import java.util.ArrayList;
 
 public class VideoUtils {
-    
     /**
      * 获取本地所有视频
      *

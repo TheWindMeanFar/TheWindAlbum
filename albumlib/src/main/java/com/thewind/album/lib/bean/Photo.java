@@ -2,10 +2,6 @@ package com.thewind.album.lib.bean;
 
 import java.io.Serializable;
 
-/**
- * Created by robot on 2018/4/11.
- */
-
 public class Photo implements Serializable {
     private String filePath;
     private boolean isSelect = false;

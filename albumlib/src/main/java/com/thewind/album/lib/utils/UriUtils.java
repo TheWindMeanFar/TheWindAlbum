@@ -6,7 +6,6 @@ import android.os.Build;
 import android.support.v4.content.FileProvider;
 
 import java.io.File;
-import java.util.EventListener;
 
 public class UriUtils {
     /**

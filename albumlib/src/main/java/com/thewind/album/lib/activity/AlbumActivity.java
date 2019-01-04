@@ -35,10 +35,6 @@ import java.util.LinkedHashMap;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
 
-/**
- * Created by robot on 2018/4/10.
- */
-
 public class AlbumActivity extends BaseActivity {
     public static final int RESULT_FINISH = 1003;
 

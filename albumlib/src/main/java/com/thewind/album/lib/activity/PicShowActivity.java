@@ -40,10 +40,6 @@ import top.zibin.luban.OnCompressListener;
 
 import static com.thewind.album.lib.activity.AlbumActivity.RESULT_FINISH;
 
-/**
- * Created by robot on 2018/4/11.
- */
-
 public class PicShowActivity extends BaseActivity {
     private ViewPager viewPager;
     private Button btnEdit;

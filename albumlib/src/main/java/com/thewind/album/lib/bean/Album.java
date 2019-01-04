@@ -4,10 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by robot on 2018/4/10.
- */
-
 public class Album implements Serializable{
     private String name;
     private boolean isSelect;
