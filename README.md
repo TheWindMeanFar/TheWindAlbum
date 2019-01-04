@@ -17,9 +17,12 @@ com.github.bumptech.glide
 com.github.yalantis:ucrop
 ```
 测试机型：
-红米1S Android 4.4；
-模拟器 Android 5.0；
-小米5S Android 8.0
+* 红米1S Android 4.4
+* 模拟器 Android 5.0
+* 小米5S Android 8.0
+
+<img src="https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/Screenshots/Screenshot_2019-01-04-20-03-59-896_com.thewind.album.png" width="300"/> <img src="https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/Screenshots/Screenshot_2019-01-04-20-01-30-776_com.thewind.album.png" width="300"/> <img src="https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/Screenshots/Screenshot_2019-01-04-20-01-41-685_com.thewind.album.png" width="300"/> <img src="https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/Screenshots/Screenshot_2019-01-04-20-02-10-047_com.thewind.album.png" width="300"/> <img src="https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/Screenshots/Screenshot_2019-01-04-20-02-14-478_com.thewind.album.png" width="300"/> <img src="https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/Screenshots/Screenshot_2019-01-04-20-03-39-504_com.thewind.album.png" width="300"/> 
+
 ### 一、集成方式
 #### 1、在项目的 build.gradle 添加如下代码
 ```
