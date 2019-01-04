@@ -4,16 +4,19 @@
 
 可修改主题颜色
 
+项目开发中需要用到多选相册，网上没有找到合适的，所以自己写了一个。
 已兼容 7.0，DEMO 中没有动态申请权限，运行 DEMO 拍照闪退的话，自行去打开拍照权限。
-
-晚点上效果图，今天 GitHub 卡爆了。
-
+站在巨人的肩膀上，写起来也比较方便，项目中用到的第三方依赖有：
+```
+com.zhy:base-adapter
+com.zhy:base-rvadapter
+top.zibin:Luban
+com.github.bumptech.glide
+com.github.yalantis:ucrop
+```
 测试机型：
-
-红米1S Android 4.4
-
-模拟器 Android 5.0
-
+红米1S Android 4.4；
+模拟器 Android 5.0；
 小米5S Android 8.0
 ### 一、集成方式
 #### 1、在项目的 build.gradle 添加如下代码
