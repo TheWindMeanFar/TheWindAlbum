@@ -1,7 +1,11 @@
 # TheWindAlbum
 ### 零、功能介绍
 仿微信样式的相册多选、单选；视频多选、单选；调用系统相机拍照
+
+可修改主题颜色
+
 已兼容 7.0，DEMO 中没有动态申请权限，运行 DEMO 拍照闪退的话，自行去打开拍照权限。
+
 晚点上效果图，今天 GitHub 卡爆了。
 
 测试机型：
@@ -128,5 +132,17 @@ TheWind.get().with(MainActivity.this)
     <color name="colorBorderWind">#FFFF7C00</color>
     <color name="colorBackgroundWind">#f1f1f1</color>
 ```
-还有就是 CheckBox 的颜色修改，只需在自己的项目中添加以下四张图，注意文件名称不能更改
+还有就是 CheckBox 的颜色修改，只需将以下 4 张图修改颜色后添加到自己项目中即可，注意文件名称不能更改
+
+ic_center_check_wind.png
+![ic_center_check_wind.png](https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/albumlib/src/main/res/mipmap-xhdpi/ic_center_check_wind.png)
+
+ic_center_uncheck_wind.png 因为是白色，所以看不到
+![ic_center_uncheck_wind.png](https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/albumlib/src/main/res/mipmap-xhdpi/ic_center_uncheck_wind.png)
+
+ic_check_wind.png
+![ic_check_wind.png](https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/albumlib/src/main/res/mipmap-xhdpi/ic_check_wind.png)
+
+ic_uncheck_wind.png 因为是白色，所以看不到
+![ic_uncheck_wind.png](https://raw.githubusercontent.com/TheWindMeanFar/TheWindAlbum/master/albumlib/src/main/res/mipmap-xhdpi/ic_uncheck_wind.png)
 
