@@ -10,7 +10,7 @@
 
 模拟器 Android 5.0
 
-小米5S Android 7.0
+小米5S Android 8.0
 ### 一、集成方式
 #### 1、在项目的 build.gradle 添加如下代码
 ```
