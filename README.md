@@ -34,7 +34,7 @@ allprojects {
 ```
 #### 2、在 module 的 build.gradle 添加如下代码
 ```
-implementation 'com.github.TheWindMeanFar:TheWindAlbum:1.1.2'
+implementation 'com.github.TheWindMeanFar:TheWindAlbum:1.1.3'
 ```
 ### 二、使用方式
 如果不设置保存路径，默认路径在 SD 卡根目录的 TheWindAlbum 文件夹
