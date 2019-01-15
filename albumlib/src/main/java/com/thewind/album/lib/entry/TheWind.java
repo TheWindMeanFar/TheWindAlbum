@@ -29,18 +29,19 @@ public class TheWind {
     private TheWindAlbum theWindAlbum;
 
     public static TheWind get() {
-        if (theWind == null) theWind = new TheWind();
+        if (theWind == null)
+            theWind = new TheWind();
         return theWind;
     }
 
     public TheWindAlbum with(Activity activity) {
-        if (theWindAlbum == null) theWindAlbum = new TheWindAlbum(activity);
+        theWindAlbum = new TheWindAlbum(activity);
         theWindAlbum.setTheWindAlbum(theWindAlbum);
         return theWindAlbum;
     }
 
     public TheWindAlbum with(Fragment fragment) {
-        if (theWindAlbum == null) theWindAlbum = new TheWindAlbum(fragment);
+        theWindAlbum = new TheWindAlbum(fragment);
         theWindAlbum.setTheWindAlbum(theWindAlbum);
         return theWindAlbum;
     }
