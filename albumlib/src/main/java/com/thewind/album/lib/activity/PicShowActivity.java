@@ -54,7 +54,7 @@ public class PicShowActivity extends BaseActivity {
      */
     private int currentIndex;
     /**
-     * 0：数据源为全部|1：数据源为预览
+     * 0：数据源为全部 | 1：数据源为预览
      */
     private int type;
     /**
@@ -310,6 +310,15 @@ public class PicShowActivity extends BaseActivity {
             }
 
             if (view.getId() == R.id.btnEdit) {
+                // 这里说明为什么 cropFileSavePath 已存在的话，要重命名文件名
+                // 因为有 cropFileSavePath 是用户传进来的，所以第一次裁剪的时候没问题
+                // 第二次裁剪的时候，数据源跟要保存的文件名一样，导致裁剪出问题
+                // 所以数据源的名字跟要保存的文件名不能一样
+                if (new File(cropFileSavePath).exists() && cropFileSavePath.lastIndexOf(".") > 0){
+                    cropFileSavePath = cropFileSavePath.substring(0, cropFileSavePath.lastIndexOf(".")) + "_1"
+                            + cropFileSavePath.substring(cropFileSavePath.lastIndexOf("."));
+                }
+
                 CropUtils.crop(PicShowActivity.this, null, isCircle, maxWidth, maxHeight,
                         (type == 0 ? AlbumActivity.listPhoto : AlbumActivity.listCheckPhoto).get(viewPager.getCurrentItem()).getFilePath(),
                         cropFileSavePath);

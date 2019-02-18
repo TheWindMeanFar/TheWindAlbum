@@ -28,7 +28,7 @@ public class CropUtils {
         Context context = null;
         if (fragment != null) context = fragment.getContext();
         else if (activity != null) context = activity;
-
+//        System.out.println("要裁剪的图片路径：" + sourceFilePath);
         Uri uri_crop = getUriForFile(context, new File(sourceFilePath));
         //裁剪后保存到文件中
         Uri destinationUri = Uri.fromFile(new File(saveFilePath));

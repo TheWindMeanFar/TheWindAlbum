@@ -26,7 +26,7 @@ public class TheWind {
     public static final String SELECT_RESULT_PATH_LIST = "pathList";
 
     private static TheWind theWind;
-    private TheWindAlbum theWindAlbum;
+    private static TheWindAlbum theWindAlbum;
 
     public static TheWind get() {
         if (theWind == null)
@@ -35,14 +35,14 @@ public class TheWind {
     }
 
     public TheWindAlbum with(Activity activity) {
-        theWindAlbum = new TheWindAlbum(activity);
-        theWindAlbum.setTheWindAlbum(theWindAlbum);
+        if (theWindAlbum == null)
+            theWindAlbum = new TheWindAlbum(activity);
         return theWindAlbum;
     }
 
     public TheWindAlbum with(Fragment fragment) {
-        theWindAlbum = new TheWindAlbum(fragment);
-        theWindAlbum.setTheWindAlbum(theWindAlbum);
+        if (theWindAlbum == null)
+            theWindAlbum = new TheWindAlbum(fragment);
         return theWindAlbum;
     }
 

@@ -57,7 +57,6 @@ public class TheWindAlbum {
 
     private Activity activity;
     private Fragment fragment;
-    private TheWindAlbum theWindAlbum;
 
     public TheWindAlbum(Activity activity) {
         this.activity = activity;
@@ -70,16 +69,6 @@ public class TheWindAlbum {
     }
 
     /**
-     * 接收在 TheWind 中创建的对象
-     * 这个方法每次都会被调用，所以在这里恢复默认值
-     *
-     * @param theWindAlbum
-     */
-    public void setTheWindAlbum(TheWindAlbum theWindAlbum) {
-        this.theWindAlbum = theWindAlbum;
-    }
-
-    /**
      * 图片方法：裁剪时设置最大的宽度
      *
      * @param maxWidth
@@ -87,7 +76,7 @@ public class TheWindAlbum {
      */
     public TheWindAlbum setMaxWidth(int maxWidth) {
         this.maxWidth = maxWidth;
-        return theWindAlbum;
+        return this;
     }
 
     /**
@@ -98,7 +87,7 @@ public class TheWindAlbum {
      */
     public TheWindAlbum setMaxHeight(int maxHeight) {
         this.maxHeight = maxHeight;
-        return theWindAlbum;
+        return this;
     }
 
     /**
@@ -109,7 +98,7 @@ public class TheWindAlbum {
      */
     public TheWindAlbum setMaxSize(int maxSize) {
         this.maxSize = maxSize;
-        return theWindAlbum;
+        return this;
     }
 
     /**
@@ -120,7 +109,7 @@ public class TheWindAlbum {
      */
     public TheWindAlbum setCircle(boolean circle) {
         isCircle = circle;
-        return theWindAlbum;
+        return this;
     }
 
     /**
@@ -131,7 +120,7 @@ public class TheWindAlbum {
      */
     public TheWindAlbum setCropFileSavePath(String cropFileSavePath) {
         this.cropFileSavePath = cropFileSavePath;
-        return theWindAlbum;
+        return this;
     }
 
     /**
@@ -142,7 +131,7 @@ public class TheWindAlbum {
      */
     public TheWindAlbum setCameraFileSavePath(String cameraFileSavePath) {
         this.cameraFileSavePath = cameraFileSavePath;
-        return theWindAlbum;
+        return this;
     }
 
     /**
@@ -156,7 +145,7 @@ public class TheWindAlbum {
         this.compressFileSavePath = compressFileSavePath;
         File file = new File(compressFileSavePath);
         if (!file.exists()) file.mkdirs();
-        return theWindAlbum;
+        return this;
     }
 
     /**
@@ -248,6 +237,6 @@ public class TheWindAlbum {
         cropFileSavePath = "";
         compressFileSavePath = "";
         maxSize = 9;
-        return theWindAlbum;
+        return this;
     }
 }

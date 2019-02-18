@@ -25,7 +25,7 @@
 
         <!--7.0 不支持 file://，所以需要配置这个东西-->
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name=".utils.AlbumFileProvider"
             android:authorities="${applicationId}"
             android:exported="false"
             android:grantUriPermissions="true">
