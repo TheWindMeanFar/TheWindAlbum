@@ -132,7 +132,14 @@ TheWind.get().with(MainActivity.this)
         }
     }
 ```
-### 四、样式修改
+### 四、退出
+Activity 或 Fragment 关闭的时候要调用
+```
+// 释放静态对象
+TheWind.close();
+```
+
+### 五、样式修改
 如果对默认的那种黑绿配色不满意，或者不符合自己的 APP 主题，可以修改主题颜色，只需在自己的项目的 colors.xml 中配置以下颜色
 ```
     <color name="colorTopBarWind">#FFFF7C00</color>
