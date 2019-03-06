@@ -29,21 +29,43 @@ public class TheWind {
     private static TheWindAlbum theWindAlbum;
 
     public static TheWind get() {
-        if (theWind == null)
+        if (theWind == null) {
             theWind = new TheWind();
+            System.out.println("TheWind 获取问题 new theWind");
+        }else {
+            System.out.println("TheWind 获取问题 old theWind");
+        }
         return theWind;
     }
 
     public TheWindAlbum with(Activity activity) {
-        if (theWindAlbum == null)
+        if (theWindAlbum == null) {
             theWindAlbum = new TheWindAlbum(activity);
+            System.out.println("TheWind 获取问题 new theWindAlbum");
+        }else {
+            System.out.println("TheWind 获取问题 old theWindAlbum");
+        }
         return theWindAlbum;
     }
 
     public TheWindAlbum with(Fragment fragment) {
-        if (theWindAlbum == null)
+        if (theWindAlbum == null) {
             theWindAlbum = new TheWindAlbum(fragment);
+            System.out.println("TheWind 获取问题 new theWindAlbum");
+        }else {
+            System.out.println("TheWind 获取问题 old theWindAlbum");
+        }
         return theWindAlbum;
+    }
+
+    /**
+     * 退出界面的时候要调用此方法，
+     * 释放静态对象，不然在 APP 没有完全退出的时候，
+     * 重新选择图片触发不到 onActivityResult
+     */
+    public static void close(){
+        theWind = null;
+        theWindAlbum = null;
     }
 
     public String getCameraFileSavePath() {
