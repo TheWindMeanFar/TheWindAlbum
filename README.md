@@ -6,7 +6,7 @@
 * 调用系统相机拍照：返回原图路径，拿到路径后可以进行裁剪
 * 可修改主题颜色
 
-项目开发中需要用到多选相册，网上没有找到合适的，所以自己写了一个。
+项目开发中需要用到多选相册，网上没有找到合适的，所以自己写了一个。记录下来，主要还是方便自己使用。
 已兼容 7.0，DEMO 中没有动态申请权限，运行 DEMO 拍照闪退的话，自行去打开拍照权限。
 站在巨人的肩膀上，写起来也比较方便，项目中用到的第三方依赖有：
 ```
@@ -34,7 +34,7 @@ allprojects {
 ```
 #### 2、在 module 的 build.gradle 添加如下代码
 ```
-implementation 'com.github.TheWindMeanFar:TheWindAlbum:1.1.3'
+implementation 'com.github.TheWindMeanFar:TheWindAlbum:1.1.5'
 ```
 ### 二、使用方式
 如果不设置保存路径，默认路径在 SD 卡根目录的 TheWindAlbum 文件夹
