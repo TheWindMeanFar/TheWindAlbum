@@ -34,7 +34,7 @@ allprojects {
 ```
 #### 2、在 module 的 build.gradle 添加如下代码
 ```
-implementation 'com.github.TheWindMeanFar:TheWindAlbum:1.1.5'
+implementation 'com.github.TheWindMeanFar:TheWindAlbum:1.1.6'
 ```
 ### 二、使用方式
 如果不设置保存路径，默认路径在 SD 卡根目录的 TheWindAlbum 文件夹
@@ -129,6 +129,18 @@ TheWind.get().with(MainActivity.this)
                         tvPath.setText("裁剪失败");
                 }
                 break;
+            // 拍摄视频完成
+            case TheWind.VIDEO_RECORD_REQUEST_CODE:
+                if (resultCode == RESULT_OK && data != null) {
+                    Uri uri = data.getData();
+                    Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
+                    if (cursor != null && cursor.moveToNext()) {
+                        String filePath = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA));
+                        tvPath.setText("视频拍摄成功：" + filePath);
+                    }
+                    cursor.close();
+                }
+            break;
         }
     }
 ```
