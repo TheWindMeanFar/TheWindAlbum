@@ -137,6 +137,8 @@ public class AlbumActivity extends BaseActivity {
         adapterAlbum = new CommonAdapter<Album>(this, R.layout.wind_item_album, listAlbum) {
             @Override
             protected void convert(ViewHolder holder, final Album album, final int position) {
+                if (album == null || album.getPhotos() == null || album.getPhotos().size() == 0)
+                    return;
                 Glide.with(AlbumActivity.this)
                         .load(new File(album.getPhotos().get(0).getFilePath()))
                         .override(300, 300)
@@ -341,6 +343,10 @@ public class AlbumActivity extends BaseActivity {
         public void onClick(View view) {
 
             if (view.getId() == R.id.tvAlbumName) {
+                if (listAlbum.size() == 1) {
+                    toast("没有更多相册了");
+                    return;
+                }
                 layoutAlbum.setVisibility(layoutAlbum.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
             }
 

@@ -2,8 +2,13 @@ package com.thewind.album;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.media.ThumbnailUtils;
+import android.net.Uri;
 import android.os.Environment;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,6 +24,7 @@ public class MainActivity extends Activity {
     private Button btnCamera;
     private Button btnAlbum;
     private Button btnVideo;
+    private Button btnVideoRecord;
     private TextView tvPath;
 
 //    private String savePathRoot;
@@ -31,6 +37,7 @@ public class MainActivity extends Activity {
         btnCamera = findViewById(R.id.btn_camera);
         btnAlbum = findViewById(R.id.btn_album);
         btnVideo = findViewById(R.id.btn_video);
+        btnVideoRecord = findViewById(R.id.btn_video_record);
         tvPath = findViewById(R.id.tv_path);
 
 //        savePathRoot = Environment.getExternalStorageDirectory().getAbsolutePath()
@@ -76,6 +83,14 @@ public class MainActivity extends Activity {
                         .openVideo();
             }
         });
+
+        btnVideoRecord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TheWind.get().with(MainActivity.this)
+                        .openVideoRecord();
+            }
+        });
     }
 
     @Override
@@ -117,6 +132,19 @@ public class MainActivity extends Activity {
                         tvPath.setText("裁剪成功：" + TheWind.get().getCropFileSavePath());
                     } else
                         tvPath.setText("裁剪失败");
+                }
+                break;
+
+            // 拍摄视频完成
+            case TheWind.VIDEO_RECORD_REQUEST_CODE:
+                if (resultCode == RESULT_OK && data != null) {
+                    Uri uri = data.getData();
+                    Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
+                    if (cursor != null && cursor.moveToNext()) {
+                        String filePath = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA));
+                        tvPath.setText("视频拍摄成功：" + filePath);
+                    }
+                    cursor.close();
                 }
                 break;
         }

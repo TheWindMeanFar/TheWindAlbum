@@ -3,6 +3,7 @@ package com.thewind.album.lib.entry;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
@@ -48,6 +49,10 @@ public class TheWindAlbum {
      * 压缩后的保存路径，不要带文件名
      */
     public String compressFileSavePath = "";
+    /**
+     * 设置录制视频的最大时长，默认 10s
+     */
+    public int recordMaxTimeLength = 10;
 
     /**
      * 共用参数：最大选择多少张图/多少个视频
@@ -149,6 +154,16 @@ public class TheWindAlbum {
     }
 
     /**
+     * 设置视频录制的最大时长
+     * @param timeLength
+     * @return
+     */
+    public TheWindAlbum setRecordMaxTimeLengh(int timeLength){
+        recordMaxTimeLength = timeLength;
+        return this;
+    }
+
+    /**
      * 选择视频
      */
     public void openVideo() {
@@ -161,6 +176,20 @@ public class TheWindAlbum {
             intent.setClass(activity, VideoActivity.class);
             activity.startActivityForResult(intent, TheWind.VIDEO_REQUEST_CODE);
         }
+    }
+
+    /**
+     * 拍摄视频
+     */
+    public void openVideoRecord() {
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        // 设置录制质量，0低质量，1高质量，没有中间值，0很模糊，1体积很大，30秒150M左右
+//        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
+        // 限制文件大小
+//        intent.putExtra(MediaStore.EXTRA_SIZE_LIMIT, 20 * 1024 * 1024L);//限制录制大小(10M=10 * 1024 * 1024L)
+        // 设置录制视频最大时长
+        intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, recordMaxTimeLength);
+        activity.startActivityForResult(intent, TheWind.VIDEO_RECORD_REQUEST_CODE);
     }
 
     /**
@@ -236,6 +265,7 @@ public class TheWindAlbum {
         cameraFileSavePath = "";
         cropFileSavePath = "";
         compressFileSavePath = "";
+        recordMaxTimeLength = 10;
         maxSize = 9;
         return this;
     }

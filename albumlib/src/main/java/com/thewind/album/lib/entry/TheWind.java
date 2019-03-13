@@ -17,6 +17,10 @@ public class TheWind {
      */
     public static final int VIDEO_REQUEST_CODE = 1004;
     /**
+     * 视频录制
+     */
+    public static final int VIDEO_RECORD_REQUEST_CODE = 1005;
+    /**
      * 裁剪完成
      */
     public static final int CROP_REQUEST_CODE = com.yalantis.ucrop.UCrop.REQUEST_CROP;
@@ -31,9 +35,6 @@ public class TheWind {
     public static TheWind get() {
         if (theWind == null) {
             theWind = new TheWind();
-            System.out.println("TheWind 获取问题 new theWind");
-        }else {
-            System.out.println("TheWind 获取问题 old theWind");
         }
         return theWind;
     }
@@ -41,9 +42,6 @@ public class TheWind {
     public TheWindAlbum with(Activity activity) {
         if (theWindAlbum == null) {
             theWindAlbum = new TheWindAlbum(activity);
-            System.out.println("TheWind 获取问题 new theWindAlbum");
-        }else {
-            System.out.println("TheWind 获取问题 old theWindAlbum");
         }
         return theWindAlbum;
     }
@@ -51,9 +49,6 @@ public class TheWind {
     public TheWindAlbum with(Fragment fragment) {
         if (theWindAlbum == null) {
             theWindAlbum = new TheWindAlbum(fragment);
-            System.out.println("TheWind 获取问题 new theWindAlbum");
-        }else {
-            System.out.println("TheWind 获取问题 old theWindAlbum");
         }
         return theWindAlbum;
     }
