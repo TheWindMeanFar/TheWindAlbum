@@ -37,7 +37,7 @@ dependencies {
     // 鲁班压缩图片的
     implementation 'top.zibin:Luban:1.1.8'
     // 图片加载框架
-    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.github.bumptech.glide:glide:4.0.0'
     // 裁剪
     implementation 'com.github.yalantis:ucrop:2.2.2'
 }

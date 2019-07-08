@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.thewind.album.lib.R;
 import com.thewind.album.lib.base.BaseFragment;
 
@@ -47,18 +48,20 @@ public class PicShowFragment extends BaseFragment {
 
     @Override
     public void onPause() {
-        Glide.clear(imageView);
+        Glide.with(getContext()).clear(imageView);
         super.onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if (!TextUtils.isEmpty(filePath))
+        if (!TextUtils.isEmpty(filePath)) {
+            RequestOptions options = new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE);
             Glide.with(this)
                     .load(new File(filePath))
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .apply(options)
                     .into(imageView);
+        }
     }
 
     public void refresh(String filePath){

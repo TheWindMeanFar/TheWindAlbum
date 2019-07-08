@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.thewind.album.lib.R;
 import com.thewind.album.lib.base.BaseActivity;
 import com.thewind.album.lib.bean.Photo;
@@ -119,7 +120,8 @@ public class PicShowActivity extends BaseActivity {
                 holder.setVisible(R.id.ivHalf, !photo.isSelect());
                 // 图片的边框，区分当前显示与非当前显示
                 holder.setBackgroundColor(R.id.imageView, ContextCompat.getColor(PicShowActivity.this, photo.isShow() ? R.color.colorBorderWind : R.color.colorTransparentWind));
-                Glide.with(PicShowActivity.this).load(new File(photo.getFilePath())).override(150, 150).into(imageView);
+                RequestOptions options = new RequestOptions().override(150, 150);
+                Glide.with(PicShowActivity.this).load(new File(photo.getFilePath())).apply(options).into(imageView);
 
                 // 点击预览图的时候跳转到对应的位置，设为当前显示
                 holder.setOnClickListener(R.id.layoutItem, new View.OnClickListener() {

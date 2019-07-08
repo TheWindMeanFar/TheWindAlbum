@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.thewind.album.lib.R;
 import com.thewind.album.lib.base.BaseActivity;
 import com.thewind.album.lib.bean.VideoInfo;
@@ -116,7 +117,8 @@ public class VideoActivity extends BaseActivity {
             protected void convert(ViewHolder holder, final VideoInfo videoInfo, int position) {
                 ImageView imageView = holder.getView(R.id.imageView);
                 imageView.getLayoutParams().width = imageView.getLayoutParams().height = itemImageWidth;
-                Glide.with(VideoActivity.this).load(videoInfo.getPath()).override(300, 300).into((ImageView) holder.getView(R.id.imageView));
+                RequestOptions options = new RequestOptions().override(300, 300);
+                Glide.with(VideoActivity.this).load(videoInfo.getPath()).apply(options).into((ImageView) holder.getView(R.id.imageView));
                 holder.setChecked(R.id.cbCheck, videoInfo.isSelect());
                 holder.setVisible(R.id.textView, true);
                 holder.setText(R.id.textView, millisecondToHMS(videoInfo.getDuration()));

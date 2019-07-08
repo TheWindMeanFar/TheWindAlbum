@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import com.bumptech.glide.request.RequestOptions;
 import com.thewind.album.lib.R;
 import com.thewind.album.lib.base.BaseActivity;
 import com.thewind.album.lib.bean.Album;
@@ -123,9 +124,10 @@ public class AlbumActivity extends BaseActivity {
             protected void convert(ViewHolder holder, final Photo photo, int position) {
                 ImageView imageView = holder.getView(R.id.imageView);
                 imageView.getLayoutParams().width = imageView.getLayoutParams().height = itemImageWidth;
+                RequestOptions options = new RequestOptions().override(300, 300);
                 Glide.with(AlbumActivity.this)
                         .load(new File(photo.getFilePath()))
-                        .override(300, 300)
+                        .apply(options)
                         .into(imageView);
 
                 holder.setChecked(R.id.cbCheck, photo.isSelect());
@@ -139,9 +141,10 @@ public class AlbumActivity extends BaseActivity {
             protected void convert(ViewHolder holder, final Album album, final int position) {
                 if (album == null || album.getPhotos() == null || album.getPhotos().size() == 0)
                     return;
+                RequestOptions options = new RequestOptions().override(300, 300);
                 Glide.with(AlbumActivity.this)
                         .load(new File(album.getPhotos().get(0).getFilePath()))
-                        .override(300, 300)
+                        .apply(options)
                         .into((ImageView) holder.getView(R.id.ivCover));
                 if (position == 0) {
                     holder.setText(R.id.tvName, "所有图片");
